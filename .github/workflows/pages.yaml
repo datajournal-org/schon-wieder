@@ -35,6 +35,5 @@ jobs:
               GH_TOKEN: ${{ github.token }}
            run: |
               tar -cf - -C docs . | zstd -9 > release.tar.zst
-              DATE=$(date +%Y-%m-%d-%H-%M)
-              gh release create "r${DATE}" --title "Release ${DATE}" --latest || true
-              gh release upload "r${DATE}" --clobber release.tar.zst
+              gh release create "release" --title "Release" --latest || true
+              gh release upload "release" --clobber release.tar.zst
