@@ -37,3 +37,8 @@ jobs:
               tar -cf - -C docs . | zstd -9 > release.tar.zst
               gh release create "release" --title "Release" --latest || true
               gh release upload "release" --clobber release.tar.zst
+
+         - name: Deploy
+           env:
+              WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+           run: curl "${WEBHOOK_URL}/update_pages"
