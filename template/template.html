@@ -16,6 +16,66 @@
 		}
 	</script>
 
+	<style>
+		footer {
+			margin-top: 10em;
+		}
+
+		footer a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		footer a:hover {
+			text-decoration: underline;
+		}
+
+		footer dl {
+			padding: 1em 0;
+			margin: 1em 0 0;
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			display: grid;
+			width: 100%;
+			column-gap: 0.5em;
+			row-gap: 0.2em;
+		}
+
+		footer dt {
+			font-weight: bold;
+			margin: 0;
+			padding: 0;
+			grid-column: 1/1;
+			text-align: right;
+		}
+
+		footer dd {
+			margin: 0;
+			padding: 0;
+			grid-column: 2/2;
+		}
+
+		footer div {
+			text-align: center;
+		}
+
+		footer nav {
+			padding: 1em 0;
+			background: #fff;
+			color: #000;
+		}
+
+		footer nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			gap: 1em;
+		}
+	</style>
+
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="Schon wieder" />
 	<meta property="og:description" content="Der Aufstieg der NSDAP/AfD" />
@@ -55,8 +115,31 @@
 	<div class="content">
 		<!--content-->
 	</div>
-	<footer style="text-align: right; font-size: 0.8rem">
-		<a href="https://datajournal.org/impressum.html" style="color: #0006 !important">Impressum</a>
+	<footer>
+		<dl>
+			<dt>Stand:</dt>
+			<dd>2025-02-20</dd>
+
+			<dt>Idee, Umsetzung, Text:</dt>
+			<dd><a href="https://michael-kreil.de/">Michael Kreil</a></dd>
+
+			<dt>Lizenz:</dt>
+			<dd>
+				<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+				<a href="https://datajournal.org">datajournal.org</a>
+			</dd>
+
+			<dt>Code:</dt>
+			<dd><a href="https://github.com/datajournal-org/schon-wieder">GitHub</a></dd>
+		</dl>
+		<nav>
+			<ul>
+				<li><a href="https://datajournal.org">
+						<img src="https://datajournal.org/assets/images/icon-blue.svg" />
+						DataJournal.org</a></li>
+				<li><a href="https://datajournal.org/impressum">Impressum</a></li>
+			</ul>
+		</nav>
 	</footer>
 </body>
 
