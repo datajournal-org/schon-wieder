@@ -2,9 +2,6 @@
 	"title": "Schon wieder",
 	"description": "Der Aufstieg der AfD/NSDAP",
 	"preview": "preview.png",
-	"date": "2025-02-20",
-	"author": "Michael Kreil",
-	"rewrites": {
-		"": "index.html"
-	}
+	"published": "2025-02-20",
+	"author": "Michael Kreil"
 }
