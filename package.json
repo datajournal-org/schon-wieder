@@ -16,7 +16,7 @@
 	"devDependencies": {
 		"@types/express": "^5.0.1",
 		"@types/node": "^22.14.1",
-		"express": "^4.21.2",
+		"express": "^4.22.1",
 		"prettier": "3.4.2",
 		"tsx": "^4.19.3",
 		"typescript": "^5.8.3"
