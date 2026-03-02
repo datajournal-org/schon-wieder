@@ -1,11 +1,12 @@
 {
-	"name": "brandmauer",
+	"name": "schon-wieder",
 	"version": "1.0.0",
 	"description": "",
 	"license": "MIT",
 	"author": "",
 	"type": "module",
 	"main": "index.js",
+	"private": true,
 	"scripts": {
 		"build": "tsx script/build.ts",
 		"dev": "tsx script/build.ts dev",
