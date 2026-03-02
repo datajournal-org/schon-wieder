@@ -1,83 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<title>Schon wieder - Der Aufstieg der NSDAP/AfD</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="https://datajournal.org/assets/images/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="https://datajournal.org/assets/images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="https://datajournal.org/assets/styles/default.css" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-	<title>Schon wieder - Der Aufstieg der NSDAP/AfD</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="https://datajournal.org/assets/images/apple-touch-icon.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="https://datajournal.org/assets/images/favicon-32x32.png" />
-	<link rel="stylesheet" href="https://datajournal.org/assets/styles/default.css" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Schon wieder" />
+		<meta property="og:description" content="Der Aufstieg der NSDAP/AfD" />
+		<meta property="og:image" content="https://datajournal.org/schon-wieder/preview.png" />
 
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Schon wieder" />
-	<meta property="og:description" content="Der Aufstieg der NSDAP/AfD" />
-	<meta property="og:image" content="https://datajournal.org/schon-wieder/preview.png" />
+		<meta name="twitter:title" content="Schon wieder" />
+		<meta name="twitter:description" content="Der Aufstieg der NSDAP/AfD" />
+		<meta name="twitter:image" content="https://datajournal.org/schon-wieder/preview.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<style>
+			/*style*/
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const spans = Array.from(document.querySelectorAll('.content span'));
 
-	<meta name="twitter:title" content="Schon wieder" />
-	<meta name="twitter:description" content="Der Aufstieg der NSDAP/AfD" />
-	<meta name="twitter:image" content="https://datajournal.org/schon-wieder/preview.png" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<style>
-		/*style*/
-	</style>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			const spans = Array.from(document.querySelectorAll('.content span'));
+				function update() {
+					let y0 = window.innerHeight / 2;
+					spans.forEach((span) => {
+						let rect = span.getBoundingClientRect();
+						if (rect.top + rect.height / 2 < y0) {
+							span.classList.add('neu');
+						} else {
+							span.classList.remove('neu');
+						}
+					});
+				}
 
-			function update() {
-				let y0 = window.innerHeight / 2;
-				spans.forEach((span) => {
-					let rect = span.getBoundingClientRect();
-					if (rect.top + rect.height / 2 < y0) {
-						span.classList.add('neu');
-					} else {
-						span.classList.remove('neu');
-					}
-				});
-			}
+				update();
+				window.addEventListener('scroll', update);
+			});
+		</script>
+	</head>
 
-			update();
-			window.addEventListener('scroll', update);
-		});
-	</script>
-</head>
+	<body>
+		<div class="white"></div>
+		<div class="content">
+			<!--content-->
+		</div>
+		<footer>
+			<dl>
+				<dt>Stand:</dt>
+				<dd>2025-02-20</dd>
 
-<body>
-	<div class="white"></div>
-	<div class="content">
-		<!--content-->
-	</div>
-	<footer>
-		<dl>
-			<dt>Stand:</dt>
-			<dd>2025-02-20</dd>
+				<dt>Idee, Umsetzung, Text:</dt>
+				<dd><a href="https://michael-kreil.de/">Michael Kreil</a></dd>
 
-			<dt>Idee, Umsetzung, Text:</dt>
-			<dd><a href="https://michael-kreil.de/">Michael Kreil</a></dd>
+				<dt>Lizenz:</dt>
+				<dd>
+					<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					<a href="https://datajournal.org">datajournal.org</a>
+				</dd>
 
-			<dt>Lizenz:</dt>
-			<dd>
-				<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-				<a href="https://datajournal.org">datajournal.org</a>
-			</dd>
+				<dt>Code:</dt>
+				<dd><a href="https://github.com/datajournal-org/schon-wieder">GitHub</a></dd>
 
-			<dt>Code:</dt>
-			<dd><a href="https://github.com/datajournal-org/schon-wieder">GitHub</a></dd>
-
-			<dt>Page Views:</dt>
-			<dd>2'651'153 (2026-03-01)</dd>
-		</dl>
-		<nav>
-			<ul>
-				<li><a href="https://datajournal.org">
-						<img src="https://datajournal.org/assets/images/icon-blue.svg" />
-						DataJournal.org</a></li>
-				<li><a href="https://datajournal.org/impressum">Impressum</a></li>
-			</ul>
-		</nav>
-	</footer>
-</body>
-
+				<dt>Page Views:</dt>
+				<dd>2'651'153 (2026-03-01)</dd>
+			</dl>
+			<nav>
+				<ul>
+					<li>
+						<a href="https://datajournal.org">
+							<img src="https://datajournal.org/assets/images/icon-blue.svg" />
+							DataJournal.org</a
+						>
+					</li>
+					<li><a href="https://datajournal.org/impressum">Impressum</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
 </html>
