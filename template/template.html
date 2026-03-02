@@ -47,7 +47,16 @@
 				}
 
 				update();
-				window.addEventListener('scroll', update);
+				let ticking = false;
+				window.addEventListener('scroll', () => {
+					if (!ticking) {
+						ticking = true;
+						requestAnimationFrame(() => {
+							ticking = false;
+							update();
+						});
+					}
+				});
 			});
 		</script>
 	</head>
