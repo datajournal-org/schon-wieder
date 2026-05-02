@@ -1,16 +1,43 @@
 import * as sass from 'sass';
-import { readFileSync, writeFileSync } from 'node:fs';
-import express from 'express';
+import { readFileSync, writeFileSync, watch } from 'node:fs';
+import express, { type Response } from 'express';
 import { NodeHtmlMarkdown } from 'node-html-markdown';
 
 process.chdir(import.meta.dirname);
 
 if (process.argv[2] === 'dev') {
 	const app = express();
-	app.get('/', (req, res) => {
-		res.send(build().html);
+	const reloadClients = new Set<Response>();
+	const reloadScript =
+		"<script>new EventSource('/__reload').onmessage=()=>location.reload();</script>";
+
+	app.get('/', (_req, res) => {
+		const { html } = build();
+		res.send(html.replace('</body>', `${reloadScript}</body>`));
 	});
+
+	app.get('/__reload', (req, res) => {
+		res.set({
+			'Content-Type': 'text/event-stream',
+			'Cache-Control': 'no-cache',
+			Connection: 'keep-alive',
+		});
+		res.flushHeaders();
+		reloadClients.add(res);
+		req.on('close', () => reloadClients.delete(res));
+	});
+
 	app.use(express.static('../docs', {}));
+
+	// fs.watch fires multiple events per save (esp. on macOS); coalesce them.
+	let pending: NodeJS.Timeout | undefined;
+	watch('../template', { recursive: true }, () => {
+		clearTimeout(pending);
+		pending = setTimeout(() => {
+			for (const client of reloadClients) client.write('data: reload\n\n');
+		}, 50);
+	});
+
 	app.listen(8080, () => {
 		console.log('Server started on http://localhost:8080');
 	});
