@@ -9,18 +9,20 @@
 	"private": true,
 	"scripts": {
 		"build": "tsx script/build.ts",
-		"dev": "tsx script/build.ts dev",
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"check": "prettier -c .",
-		"format": "prettier -w ."
+		"dev": "tsx script/build.ts dev",
+		"format": "prettier -w .",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"upgrade": "npm-check-updates -u && npm install"
 	},
 	"devDependencies": {
 		"@types/express": "^5.0.6",
-		"@types/node": "^25.3.3",
+		"@types/node": "^25.6.0",
 		"express": "^5.2.1",
-		"prettier": "3.8.1",
+		"npm-check-updates": "^22.1.0",
+		"prettier": "3.8.3",
 		"tsx": "^4.21.0",
-		"typescript": "^5.9.3"
+		"typescript": "^6.0.3"
 	},
 	"prettier": {
 		"printWidth": 100,
@@ -30,6 +32,6 @@
 	},
 	"dependencies": {
 		"node-html-markdown": "^2.0.0",
-		"sass": "^1.97.3"
+		"sass": "^1.99.0"
 	}
 }
