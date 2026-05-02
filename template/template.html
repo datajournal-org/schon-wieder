@@ -32,31 +32,21 @@
 		</style>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
-				const spans = Array.from(document.querySelectorAll('.content span.switch'));
-
-				function update() {
-					let y0 = window.innerHeight / 2;
-					spans.forEach((span) => {
-						let rect = span.getBoundingClientRect();
-						if (rect.top + rect.height / 2 < y0) {
-							span.classList.add('neu');
-						} else {
-							span.classList.remove('neu');
+				// Root extends far above the viewport so elements scrolled past the top
+				// keep ratio = 1 (and stay .neu). Bottom is clipped to viewport center,
+				// so threshold 0.5 fires exactly when an element's vertical center
+				// crosses the viewport's vertical center.
+				const observer = new IntersectionObserver(
+					(entries) => {
+						for (const entry of entries) {
+							entry.target.classList.toggle('neu', entry.intersectionRatio >= 0.5);
 						}
-					});
-				}
-
-				update();
-				let ticking = false;
-				window.addEventListener('scroll', () => {
-					if (!ticking) {
-						ticking = true;
-						requestAnimationFrame(() => {
-							ticking = false;
-							update();
-						});
-					}
-				});
+					},
+					{ rootMargin: '100000px 0px -50% 0px', threshold: 0.5 },
+				);
+				document
+					.querySelectorAll('.content span.switch')
+					.forEach((span) => observer.observe(span));
 			});
 		</script>
 	</head>
