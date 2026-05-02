@@ -11,5 +11,5 @@
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext"
 	},
-	"include": ["script/*.ts"]
+	"include": ["script/*.ts", "tests/*.ts", "playwright.config.ts"]
 }

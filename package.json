@@ -12,10 +12,11 @@
 		"check": "prettier -c .",
 		"dev": "tsx script/build.ts dev",
 		"format": "prettier -w .",
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "playwright test",
 		"upgrade": "npm-check-updates -u && npm install"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.59.1",
 		"@types/express": "^5.0.6",
 		"@types/node": "^25.6.0",
 		"express": "^5.2.1",

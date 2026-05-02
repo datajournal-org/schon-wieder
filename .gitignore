@@ -1,3 +1,5 @@
 
 docs/index.html
 node_modules
+playwright-report
+test-results
