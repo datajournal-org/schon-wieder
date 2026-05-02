@@ -32,20 +32,28 @@
 		</style>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
-				// Root extends far above the viewport so elements scrolled past the top
-				// keep ratio = 1 (and stay .neu). Bottom is clipped to viewport center,
-				// so threshold 0.5 fires exactly when an element's vertical center
-				// crosses the viewport's vertical center.
+				// The outer .switch has line-height: 0 (so the two stacked inner spans
+				// share one visual line). That collapses its bounding box to 0px tall
+				// and breaks intersectionRatio, so we observe the first inner span —
+				// which has real height — and toggle the class on its parent.
+				//
+				// The root extends far above the viewport so spans scrolled past the
+				// top keep ratio = 1 (and stay .neu). The bottom is clipped to the
+				// viewport center, so threshold 0.5 fires exactly when the element's
+				// vertical center crosses the viewport's vertical center.
 				const observer = new IntersectionObserver(
 					(entries) => {
 						for (const entry of entries) {
-							entry.target.classList.toggle('neu', entry.intersectionRatio >= 0.5);
+							entry.target.parentElement.classList.toggle(
+								'neu',
+								entry.intersectionRatio >= 0.5,
+							);
 						}
 					},
 					{ rootMargin: '100000px 0px -50% 0px', threshold: 0.5 },
 				);
 				document
-					.querySelectorAll('.content span.switch')
+					.querySelectorAll('.content span.switch > span:first-child')
 					.forEach((span) => observer.observe(span));
 			});
 		</script>
