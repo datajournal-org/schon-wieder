@@ -47,7 +47,7 @@ function build(): { alt: string; neu: string; html: string } {
 					style = ' style="text-align: right"';
 				}
 
-				let html = `<span class="switch"${style}><span>${clean(alt)}</span><br><span>${clean(neu)}</span></span>`;
+				let html = `<span class="switch"${style}><span>${clean(alt)}</span><span>${clean(neu)}</span></span>`;
 				if (pre || post) {
 					html = `<nobr>${pre}${html}${post}</nobr>`;
 				}

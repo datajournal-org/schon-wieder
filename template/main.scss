@@ -57,14 +57,12 @@ body {
 
 span.switch {
 	font-weight: bold;
-	display: inline-block;
+	display: inline-grid;
 	text-align: center;
-	width: fit-content;
-	position: relative;
-	line-height: 0em;
 
 	span {
-		display: inline-block;
+		grid-column: 1;
+		grid-row: 1;
 		text-wrap: nowrap;
 		transition: opacity 0.3s;
 
