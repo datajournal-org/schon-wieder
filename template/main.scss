@@ -59,6 +59,25 @@ body {
 	p {
 		margin: 1em 0;
 	}
+
+	section.added {
+		position: relative;
+		border-right: 1px solid rgba(0, 0, 0, 0.2);
+		margin-top: 2em;
+
+		&::before {
+			content: attr(data-added);
+			position: absolute;
+			top: 0.2em;
+			left: 100%;
+			margin-left: 0em;
+			writing-mode: sideways-rl;
+			white-space: nowrap;
+			color: rgba(0, 0, 0, 0.2);
+			font-style: italic;
+			font-size: 0.75em;
+		}
+	}
 }
 
 span.switch {
