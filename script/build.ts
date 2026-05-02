@@ -57,7 +57,7 @@ function build(): { alt: string; neu: string; html: string } {
 		};
 
 		function clean(text: string): string {
-			return text.replace(/^\$+|\$+/, '');
+			return text.replace(/^\$+|\$+$/g, '');
 		}
 
 		function convert(
