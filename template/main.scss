@@ -12,6 +12,12 @@ body {
 	overflow-x: hidden;
 	--width: min(600px, 100vw);
 	--headline: calc(var(--width) / 30);
+
+	a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-thickness: 0.1em;
+	}
 }
 
 .white {
