@@ -5,7 +5,7 @@ import { NodeHtmlMarkdown } from 'node-html-markdown';
 
 process.chdir(import.meta.dirname);
 
-if (process.argv[2] === 'dev') {
+if (process.argv.includes('dev')) {
 	const app = express();
 	const reloadClients = new Set<Response>();
 	const reloadScript =
@@ -44,8 +44,11 @@ if (process.argv[2] === 'dev') {
 } else {
 	const { alt, neu, html } = build();
 	writeFileSync('../docs/index.html', html, 'utf8');
-	//writeFileSync('../docs/alt.md', alt, 'utf8');
-	//writeFileSync('../docs/neu.md', neu, 'utf8');
+
+	if (process.argv.includes('alt')) {
+		writeFileSync('../docs/alt.md', alt, 'utf8');
+		writeFileSync('../docs/neu.md', neu, 'utf8');
+	}
 }
 
 function build(): { alt: string; neu: string; html: string } {
