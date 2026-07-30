@@ -33,7 +33,7 @@ body {
 
 .content {
 	z-index: 2;
-	padding: 0 20px 60vh 20px;
+	padding: 0 20px 30vh 20px;
 	width: var(--width);
 	box-sizing: border-box;
 	margin: auto;
@@ -111,4 +111,44 @@ span.switch {
 			opacity: 1;
 		}
 	}
+}
+
+.donate {
+	width: var(--width);
+	box-sizing: border-box;
+	margin: 0 auto 1em;
+	padding: 0 20px;
+
+	.card {
+		text-align: center;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		border-radius: 14px;
+		padding: 22px 22px 24px;
+
+		p {
+			color: rgba(0, 0, 0, 0.66);
+			text-wrap: pretty;
+			max-width: 48ch;
+			margin: 10px auto 16px;
+		}
+
+		a.tip {
+			display: inline-block;
+			padding: 0.65rem 1.2rem;
+			border-radius: 10px;
+			background-color: #2b2118;
+			color: #f2e7d8;
+			font-weight: bold;
+			text-decoration: none;
+
+			&:focus-visible {
+				outline: 2px solid #2b2118;
+				outline-offset: 2px;
+			}
+		}
+	}
+}
+
+footer {
+	margin-top: 2em;
 }
