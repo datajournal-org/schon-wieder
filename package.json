@@ -10,7 +10,7 @@
 	"scripts": {
 		"build": "tsx script/build.ts",
 		"check": "prettier -c .",
-		"dev": "tsx script/build.ts dev",
+		"dev": "tsx watch --clear-screen=false script/dev.ts",
 		"format": "prettier -w .",
 		"test": "playwright test",
 		"upgrade": "npm-check-updates -u && npm install"
