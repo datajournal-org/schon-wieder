@@ -33,6 +33,6 @@
 	},
 	"dependencies": {
 		"node-html-markdown": "^2.0.0",
-		"sass": "^1.102.0"
+		"sass": "^1.103.1"
 	}
 }
