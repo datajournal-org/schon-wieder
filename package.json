@@ -16,9 +16,9 @@
 		"upgrade": "npm-check-updates -u && npm install"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.62.1",
+		"@playwright/test": "^1.63.0",
 		"@types/express": "^5.0.6",
-		"@types/node": "^26.4.1",
+		"@types/node": "^26.5.1",
 		"express": "^5.2.1",
 		"npm-check-updates": "^23.1.0",
 		"prettier": "3.9.6",
