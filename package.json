@@ -13,15 +13,15 @@
 		"dev": "tsx watch --clear-screen=false script/dev.ts",
 		"format": "prettier -w .",
 		"test": "playwright test",
-		"upgrade": "npm-check-updates -u && npm install"
+		"upgrade": "npm-check-updates -u --peer && npm install && npm audit fix"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.63.0",
+		"@playwright/test": "^1.64.0",
 		"@types/express": "^5.0.6",
-		"@types/node": "^26.6.2",
-		"express": "^5.2.1",
-		"npm-check-updates": "^23.1.0",
-		"prettier": "3.9.9",
+		"@types/node": "^26.6.5",
+		"express": "^5.3.0",
+		"npm-check-updates": "^23.1.1",
+		"prettier": "3.9.10",
 		"tsx": "^4.23.15",
 		"typescript": "^7.0.2"
 	},
@@ -33,6 +33,11 @@
 	},
 	"dependencies": {
 		"node-html-markdown": "^2.0.0",
-		"sass": "^1.104.0"
+		"sass": "^1.105.1"
+	},
+	"allowScripts": {
+		"@parcel/watcher": true,
+		"esbuild": true,
+		"fsevents": true
 	}
 }
