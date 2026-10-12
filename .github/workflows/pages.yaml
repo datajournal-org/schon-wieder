@@ -34,7 +34,7 @@ jobs:
            run: npm run build
 
          - name: Install Playwright browsers
-           run: npx playwright install chromium
+           run: npx playwright install chromium firefox webkit
 
          - name: Run browser tests
            run: npm test
