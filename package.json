@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"node-html-markdown": "^2.0.0",
-		"sass": "^1.105.1"
+		"sass": "^1.105.2"
 	},
 	"allowScripts": {
 		"@parcel/watcher": true,
