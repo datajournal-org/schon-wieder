@@ -18,10 +18,10 @@
 	"devDependencies": {
 		"@playwright/test": "^1.64.0",
 		"@types/express": "^5.0.6",
-		"@types/node": "^26.6.5",
+		"@types/node": "^26.6.6",
 		"express": "^5.3.0",
 		"npm-check-updates": "^23.1.1",
-		"prettier": "3.9.10",
+		"prettier": "3.10.1",
 		"tsx": "^4.23.15",
 		"typescript": "^7.0.2"
 	},
